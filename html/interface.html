@@ -1,0 +1,71 @@
+<html>
+    <head>
+<title>XYZ-COMPANY</title>
+<link rel="stylesheet" href="../css/interface.css">
+</head>
+<body>
+    <nav>
+        <div class="df">
+    <h1>XYZ-COMPANY</h1>
+    <P1>CURRANCY EXCHANGE PLATFORM</P1>
+</div>
+</nav>
+
+<div id="dd">
+    <div style="margin-left: -250px;">
+<div class="gh">
+    <label id="amount">Amount</label><br>
+    <input type="number"name="amount"placeholder="100"value="number" id="currency-1"required=""><br>
+</div>
+<div class="mn">
+    <label>From</label><br>
+    <select name="" id="">
+        <option value="">USD-$</option>
+        <option value="RWANDA-RWF">RWANDA-RWF</option>
+    </select>
+</div>
+
+<div class="ss">
+    <label>TO</label><br>
+    <select name="" id="jk">
+        <option value="">RWANDA-RWF</option>
+        <option value="">USD-$</option>
+    </select>
+    <p>result:</p>
+</div>
+<div id="ee">
+    <button onclick ="alert('do you want to convert?')">convert</button>
+    
+</div>
+</div>
+</div>
+<script>
+    function convertCurrency(amount, fromCurrency, toCurrency) {
+    // Add your currency conversion logic here
+    // For example, you can use APIs like Fixer.io, Open Exchange Rates, etc.
+    // Or you can implement your own conversion rates
+    // This function should return the converted amount
+    // For now, let's just return a placeholder value
+    return amount * 2; // Placeholder value, replace with actual conversion logic
+}
+
+document.getElementById('ee').addEventListener('click', function() {
+    var amount = parseFloat(document.getElementById('currency-1').value);
+    var fromCurrency = document.querySelector('.mn select').value;
+    var toCurrency = document.querySelector('.ss select').value;
+    try {
+    
+    var convertedAmount = convertCurrency(amount, fromCurrency, toCurrency);
+    
+    
+    // Display the converted amount in the result paragraph
+    document.querySelector('.ss p').textContent = 'Result: ' + convertedAmount;
+} catch (error) {
+        // Handle the error gracefully
+        document.querySelector('.ss p').textContent = 'Error: ' + error.message;
+}
+});
+
+</script>
+</body>
+</html>
